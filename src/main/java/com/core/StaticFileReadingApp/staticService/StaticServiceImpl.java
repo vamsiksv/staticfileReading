@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -91,6 +92,19 @@ public class StaticServiceImpl implements StaticService {
 		}
 
 		return map;
+	}
+	
+	public StateCodeObj getPostalCd(List<StateCodeObj> stateCodeObj)
+	{
+		for(StateCodeObj s:stateCodeObj)
+		{
+			if(s.getIndicator() == "Y")
+			{
+				return s;
+			}
+		}
+		return null;
+		
 	}
 
 }
